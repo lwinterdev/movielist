@@ -21,7 +21,7 @@ function App() {
           <Header/>
           <Routes>
             
-            <Route path="/:movieId" element={<Movie/>}/>
+            <Route path="/moviedatabase/:movieId" element={<Movie/>}/>
            
           </Routes>
           
