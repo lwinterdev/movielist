@@ -22,7 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/:movieId" element={<Movie/>}/>
-            
+            <Route path="/*" element={<Home/>}/>
           </Routes>
           
                 
