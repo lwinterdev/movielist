@@ -25,7 +25,7 @@ const Movie = () => {
     <div className='bg-dark text-light container-fluid'>
         
         <div style={{'maxWidth':'400px'}} className='row'>
-        <img src={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path } alt="movie-poster"/>
+            <img src={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path } alt="movie-poster"/>
         </div>
         
         <div className='col'>

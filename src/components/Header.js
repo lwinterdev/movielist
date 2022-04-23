@@ -9,8 +9,8 @@ const Header = () => {
                  
   return (
     
-    <div className='bg-dark text-light p-2 sticky-top display-1 p-2'>
-      <h3><Link style={{ textDecoration: 'none' }} className='p-4 text-warning' to="/">Home</Link>
+    <div className='bg-dark text-light p-1 sticky-top display-1 '>
+      <h3><Link style={{ textDecoration: 'none' }} className='p-2 text-warning' to="/">Home</Link>
       All Images and API provided by
       <a href='https://www.themoviedb.org/'>
         <img classname='p-4' style={{ height: 100, width: 200 }} src={Logo}/>

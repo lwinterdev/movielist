@@ -25,7 +25,7 @@ export const SearchBar = ({setSearchTerm}) => {
 
     return (
 
-    <div>
+    <div className='sticky-top bg-dark p-2' style={{'top': '80px'}}>
         <img src={searchIcon} alt='search-icon'></img>
         <input type = "text"
                placeholder='Search Movie'
