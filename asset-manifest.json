@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/moviedlist/static/css/main.a2f463cd.css",
-    "main.js": "/moviedlist/static/js/main.a4f32811.js",
+    "main.js": "/moviedlist/static/js/main.303294ce.js",
     "static/js/787.e8de7b74.chunk.js": "/moviedlist/static/js/787.e8de7b74.chunk.js",
     "index.html": "/moviedlist/index.html",
     "static/media/search-icon.svg": "/moviedlist/static/media/search-icon.cd820f5a55f7cd57d7131f1672d43473.svg",
     "main.a2f463cd.css.map": "/moviedlist/static/css/main.a2f463cd.css.map",
-    "main.a4f32811.js.map": "/moviedlist/static/js/main.a4f32811.js.map",
+    "main.303294ce.js.map": "/moviedlist/static/js/main.303294ce.js.map",
     "787.e8de7b74.chunk.js.map": "/moviedlist/static/js/787.e8de7b74.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2f463cd.css",
-    "static/js/main.a4f32811.js"
+    "static/js/main.303294ce.js"
   ]
 }
