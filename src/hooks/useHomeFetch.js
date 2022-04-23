@@ -19,7 +19,7 @@ export const useHomeFetch = () => {
 
     console.log(searchTerm);
 
-    const fetchMovies = async (page,searchTerm = "") =>{
+    const fetchMovies = async (page,searchTerm = "") =>{ 
     try{
         
         setError(false);
