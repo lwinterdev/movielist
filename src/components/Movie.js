@@ -22,24 +22,27 @@ const Movie = () => {
     }
     
     return (
-    <div className='bg-dark text-light'>
-        <div style={{'minHeight':'0vh'}} ></div>
+    <div className='bg-dark text-light container-fluid'>
         
+        <div style={{'maxWidth':'400px'}} className='row'>
         <img src={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path } alt="movie-poster"/>
+        </div>
         
-        <h1>{movie.title}</h1>
-        <div>{movie.tagline}</div>
+        <div className='col'>
+        <h1 className='col'>{movie.title}</h1>
+        <div className='col'>{movie.tagline}</div>
         
-        <h3>Plot</h3>
-        <p>{movie.overview}</p>
+        <h3 className='col'>Plot</h3>
+        <p className='col'>{movie.overview}</p>
         
-        <h3>Actors</h3>
+        <h3 className='col'>Actors</h3>
         <div>
  
         </div>
   
         <h3>Rating</h3>
         <div>{movie.vote_average}</div>
+        </div>
         
 
     
