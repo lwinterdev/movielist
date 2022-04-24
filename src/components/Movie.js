@@ -37,7 +37,7 @@ const Movie = () => {
         
         <h3 className='col'>Actors</h3>
         <div>
- 
+            {/* TODO: show the actors of the movie here */}
         </div>
   
         <h3>Rating</h3>
