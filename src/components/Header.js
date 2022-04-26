@@ -13,7 +13,7 @@ const Header = () => {
       <h3><Link style={{ textDecoration: 'none' }} className='p-2 text-warning' to="/">Home</Link>
       All Images and API provided by
       <a href='https://www.themoviedb.org/'>
-        <img classname='p-4' style={{ height: 100, width: 200 , paddingLeft: 10}} src={Logo}/>
+        <img className='p-4' style={{ height: 100, width: 200 , paddingLeft: 10}} src={Logo}/>
       </a>
       </h3>
     </div>

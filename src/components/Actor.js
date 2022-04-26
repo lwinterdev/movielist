@@ -2,10 +2,10 @@ import React from 'react'
 
 const Actor = ({name,character,imageURL}) => {
   return (
-    <div>
-        <img scr={imageURL} alt="actor"></img>
+    <div className='col p-2'>
+       
         <h3>{name}</h3>
-        <h4>{character}</h4>
+        <p>{character}</p>
 
     </div>
   )

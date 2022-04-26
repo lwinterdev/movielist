@@ -36,16 +36,26 @@ const Movie = () => {
         <p className='col'>{movie.overview}</p>
         
         <h3 className='col'>Actors</h3>
-        <div>
-            {/* TODO: show the actors of the movie here */}
+        <div className='row'>
+            
+        {movie.actors && movie.actors.map(actor => (
+        
+          <Actor
+            key={actor.credit_id}
+            name={actor.name}
+            character={actor.character}
+            imageUrl={
+              actor.profile_path
+                && `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
+                
+            }
+          />
+        ))}
         </div>
   
         <h3>Rating</h3>
         <div>{movie.vote_average}</div>
         </div>
-        
-
-    
         
     </div>
   )
