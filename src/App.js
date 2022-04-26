@@ -20,6 +20,7 @@ function App() {
       <div className="App">
         
           <Header/>
+          
           <Routes>
             
             <Route path="/:movieId" element={<Movie/>}/>
@@ -28,13 +29,6 @@ function App() {
             
           </Routes>
           
-          
-                
-
-          <div className='App-divider'></div>
-        
-
-          <div className='App-header'></div>
         
       </div>
       <ScrollToTop/>
