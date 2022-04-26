@@ -35,6 +35,11 @@ const Movie = () => {
         <h3 className='col'>Plot</h3>
         <p className='col'>{movie.overview}</p>
         
+        <h3 className='col'>Directing</h3>
+        {movie.directors && movie.directors.map(director => (
+            <div className='p-2'>{director.name}</div>
+        ))}
+
         <h3 className='col'>Actors</h3>
         <div className='row'>
             
