@@ -32,7 +32,8 @@ const Movie = () => {
         
         <div className='col'>
            
-            
+            <h1 className='p-4'>{movie.title}</h1>
+
             {movie.runtime > 0 && <div>
                 <h3 className='text-info'>Runtime</h3>
                 <p className='col '>{movie.runtime} Minutes</p>
