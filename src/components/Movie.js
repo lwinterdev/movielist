@@ -20,8 +20,8 @@ const Movie = () => {
         
     <div className='bg-dark text-light container-fluid'>
         <div>
-        <div style={{'display':'flex','justifyContent':'center'}}className='row img-fluid rounded'>
-            <img  style={{'maxWidth':'600px','border-radius': '30px'}}  src={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path } alt="movie-poster"/>
+        <div style={{'display':'flex','justifyContent':'center'}} className='row'>
+            <img  style={{'maxWidth':'600px','borderRadius': '30px'}} className='img-fluid rounded' src={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path } alt="movie-poster"/>
         </div>
         
         
@@ -41,10 +41,10 @@ const Movie = () => {
             
             <h3 className='col text-info'>Directing</h3>
             {movie.directors && movie.directors.map(director => (
-                <div className='p-1 person-image'>
-                    <h3 key={director.id }className='p-1'>{director.name}</h3>
+                <div  key={director.id } className='p-1'>
+                    <h3  className='p-1'>{director.name}</h3>
                     { director.profile_path &&
-                        <img style={{'border-radius': '20px'}} classname="p-4 img-fluid rounded" src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`} alt="director"/>
+                        <img style={{'borderRadius': '20px'}} src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`} alt="director"/>
                     }
                 </div>
             ))}
@@ -61,11 +61,11 @@ const Movie = () => {
                 
             
             {movie.actors && movie.actors.map(actor => (
-                <div className='col m-2'>
+                <div key={actor.credit_id} className='col m-2'>
 
                     <h5 style={{'minHeight':'70px'}}>{actor.name}</h5>
                     { actor.profile_path &&
-                        <img  style={{'border-radius': '20px'}} classname="p-4 person-image" src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`} alt="actor"/>
+                        <img  style={{'borderRadius': '20px'}} src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`} alt="actor"/>
                     }
                     <p>{actor.character}</p>
                     </div>
