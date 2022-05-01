@@ -24,7 +24,7 @@ const Home = () => {
     }
 
     return (
-      <div className='bg-dark text-light'>
+      <div className='bg-dark text-light container-fluid'>
 
         {!searchTerm && state.results[0] ? 
           <HeroImage image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}

@@ -1,11 +1,6 @@
 import React from 'react';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 
-//components
-import Grid from './Grid';
-import Spinner from './Spinner';
-import Actor from './Actor';
-
 //hook
 import { useMovieFetch } from '../hooks/useMovieFetch';
 import { useParams } from 'react-router-dom';
@@ -25,8 +20,8 @@ const Movie = () => {
         
     <div className='bg-dark text-light container-fluid'>
         <div>
-        <div style={{'maxWidth':'400px'}} className='row'>
-            <img src={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path } alt="movie-poster"/>
+        <div style={{'display':'flex','justifyContent':'center'}}className='row img-fluid rounded'>
+            <img  style={{'maxWidth':'600px','border-radius': '30px'}}  src={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path } alt="movie-poster"/>
         </div>
         
         
@@ -47,10 +42,10 @@ const Movie = () => {
             <h3 className='col text-info'>Directing</h3>
             {movie.directors && movie.directors.map(director => (
                 <div className='p-1 person-image'>
-                    <div key={director.id }className='p-1'>{director.name}</div>
+                    <h3 key={director.id }className='p-1'>{director.name}</h3>
                     { director.profile_path &&
-                    <img classname="p-4" src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`} alt="director"/>
-                }
+                        <img style={{'border-radius': '20px'}} classname="p-4 img-fluid rounded" src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`} alt="director"/>
+                    }
                 </div>
             ))}
             
@@ -66,16 +61,16 @@ const Movie = () => {
                 
             
             {movie.actors && movie.actors.map(actor => (
-            <div className='col m-2'>
+                <div className='col m-2'>
 
-                <h3>{actor.name}</h3>
-                { actor.profile_path &&
-                    <img classname="p-4 person-image" src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`} alt="actor"/>
-                }
-                <p>{actor.character}</p>
-                </div>
+                    <h5 style={{'minHeight':'70px'}}>{actor.name}</h5>
+                    { actor.profile_path &&
+                        <img  style={{'border-radius': '20px'}} classname="p-4 person-image" src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`} alt="actor"/>
+                    }
+                    <p>{actor.character}</p>
+                    </div>
 
-            ))}
+                ))}
             </div>
     
             
