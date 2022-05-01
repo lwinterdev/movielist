@@ -22,6 +22,7 @@ const Movie = () => {
     }
     
     return (
+        
     <div className='bg-dark text-light container-fluid'>
         <div>
         <div style={{'maxWidth':'400px'}} className='row'>
@@ -44,7 +45,12 @@ const Movie = () => {
             
             <h3 className='col text-info'>Directing</h3>
             {movie.directors && movie.directors.map(director => (
-                <div key={director.id }className='p-2 '>{director.name}</div>
+                <div className='p-4'>
+                    <div key={director.id }className='p-2 '>{director.name}</div>
+                    { director.profile_path &&
+                    <img classname="p-4" src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`}/>
+                }
+                </div>
             ))}
             
 
@@ -59,17 +65,15 @@ const Movie = () => {
                 
             
             {movie.actors && movie.actors.map(actor => (
-            
-            <Actor
-                key={actor.credit_id}
-                name={actor.name}
-                character={actor.character}
-                imageUrl={
-                actor.profile_path
-                    && `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
-                    
+            <div className='col m-4'>
+
+                <h3>{actor.name}</h3>
+                { actor.profile_path &&
+                    <img classname="p-4" src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`}/>
                 }
-            />
+                <p>{actor.character}</p>
+                </div>
+
             ))}
             </div>
     
