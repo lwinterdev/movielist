@@ -49,7 +49,7 @@ const Movie = () => {
                 <div className='p-1 person-image'>
                     <div key={director.id }className='p-1'>{director.name}</div>
                     { director.profile_path &&
-                    <img classname="p-4" src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`}/>
+                    <img classname="p-4" src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`} alt="director"/>
                 }
                 </div>
             ))}
@@ -70,7 +70,7 @@ const Movie = () => {
 
                 <h3>{actor.name}</h3>
                 { actor.profile_path &&
-                    <img classname="p-4 person-image" src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`}/>
+                    <img classname="p-4 person-image" src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`} alt="actor"/>
                 }
                 <p>{actor.character}</p>
                 </div>
