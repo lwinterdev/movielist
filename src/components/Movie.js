@@ -30,7 +30,7 @@ const Movie = () => {
             <div className='col'>
             
                 <h1 className='p-4'>{movie.title}</h1>
-
+            
                 {movie.runtime > 0 && <div>
                     <h3 className='text-info'>Runtime</h3>
                     <p className='col '>{movie.runtime} Minutes</p>
@@ -40,10 +40,11 @@ const Movie = () => {
                 <h3 className='col p-1 text-info'>Plot</h3>
                 <p className='col ' >{movie.overview}</p>
                 
-                
+
+                {/*show directors */}
                 <h3 className='col text-info'>Directing</h3>
                 {movie.directors && movie.directors.map(director => (
-                    <div  key={director.id } className='p-1'>
+                    <div  key={director.id } style={{'borderRadius': '20px'}} className='p-1'>
                         <h3  className='p-1'>{director.name}</h3>
                         { director.profile_path &&
                             <img style={{'borderRadius': '20px'}} src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`} alt="director"/>
@@ -60,12 +61,13 @@ const Movie = () => {
 
                 <h3 className='col text-info'>Actors</h3>
                 <div className='row'>
-                    
-                
-                {movie.actors && movie.actors.map(actor => (
-                    <div key={actor.credit_id} className='col m-2'>
 
-                        <h5 style={{'minHeight':'70px'}}>{actor.name}</h5>
+
+                {/*show actors and their characters */}
+                {movie.actors && movie.actors.map(actor => (
+                    <div key={actor.credit_id} style={{'borderRadius': '20px', 'backgroundColor':'black'}} className='col m-2 '>
+
+                        <h5 style={{'minHeight':'70px'}} className='p-2' >{actor.name}</h5>
                         { actor.profile_path ?
                             <img  style={{'borderRadius': '20px'}} src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`} alt="actor"/>
                             :
@@ -74,7 +76,7 @@ const Movie = () => {
                                 No Image
                             </div>
                         }
-                        <p>{actor.character}</p>
+                        <p className='p-2 m-2'>{actor.character}</p>
                     </div>
 
                     ))}
