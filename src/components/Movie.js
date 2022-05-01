@@ -46,8 +46,8 @@ const Movie = () => {
             
             <h3 className='col text-info'>Directing</h3>
             {movie.directors && movie.directors.map(director => (
-                <div className='p-4'>
-                    <div key={director.id }className='p-2 '>{director.name}</div>
+                <div className='p-1 person-image'>
+                    <div key={director.id }className='p-1'>{director.name}</div>
                     { director.profile_path &&
                     <img classname="p-4" src={`http://image.tmdb.org/t/p/w92/${director.profile_path}`}/>
                 }
@@ -66,11 +66,11 @@ const Movie = () => {
                 
             
             {movie.actors && movie.actors.map(actor => (
-            <div className='col m-4'>
+            <div className='col m-2'>
 
                 <h3>{actor.name}</h3>
                 { actor.profile_path &&
-                    <img classname="p-4" src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`}/>
+                    <img classname="p-4 person-image" src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`}/>
                 }
                 <p>{actor.character}</p>
                 </div>
@@ -81,8 +81,8 @@ const Movie = () => {
             
             <h3 className='text-info'>Rating</h3>
             <div className='bg-dark'>{movie.vote_average}</div>
-            </div>
-            </div>
+        </div>
+        </div>
     </div>
   )
 }
