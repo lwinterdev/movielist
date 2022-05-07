@@ -8,6 +8,8 @@ import Spinner from './Spinner';
 import { SearchBar } from './SearchBar';
 import Button from './Button';
 
+import NoImage from '../Images/no_image.jpg'
+
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL, API_KEY } from '../config';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -39,7 +41,10 @@ const Home = () => {
             <Thumb 
               key={movie.id}
               clickable
-              image={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path }
+              image={movie.poster_path ? 
+                IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path //show the movie thumbnail if there is one
+                :
+                NoImage}                                         //show a placeholder image if there is no thumbnail
               movieId = {movie.id}
               
             />

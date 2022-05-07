@@ -1,5 +1,9 @@
 import React from 'react';
-import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
+import { IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '../config';
+
+import NoImage from '../Images/no_image.jpg'
+import Actor from './Actor';
+import Grid from './Grid';
 
 //hook
 import { useMovieFetch } from '../hooks/useMovieFetch';
@@ -17,12 +21,17 @@ const Movie = () => {
     }
     
     return (
-        
+      
     <div className='bg-dark text-light container-fluid'>
-        <div className='row'>
+        
+        <div className='row cointainer-fluid'>
             <div style={{'display':'flex','justifyContent':'center'}} className='col'>
-                <img  style={{'maxWidth':'600px','borderRadius': '40px'}} 
-                    className='img-fluid rounded p-2' src={movie.poster_path && IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path } alt="movie-poster"
+                <img  style={{'maxWidth':'450px','borderRadius': '40px'}} 
+                    className='img-fluid rounded p-2' src={
+                        movie.poster_path ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path 
+                        : 
+                        NoImage} 
+                        alt="movie-poster"
                 />
             </div>
             
@@ -66,26 +75,20 @@ const Movie = () => {
                 
                 </div>
                 
-                <div className='row'>
-            
-                <h3 style={{'borderRadius': '20px', 'backgroundColor':'black'}} className='text-info'>Actors</h3>
-                {/*show actors and their characters */}
-                {movie.actors && movie.actors.map(actor => (
-                    <div key={actor.credit_id} style={{'borderRadius': '20px', 'backgroundColor':'black'}} className='col m-2 '>
-
-                        <h5 style={{'minHeight':'70px'}} className='p-2' >{actor.name}</h5>
-                        { actor.profile_path ?
-                            <img  style={{'borderRadius': '20px'}} src={`http://image.tmdb.org/t/p/w92/${actor.profile_path}`} alt="actor"/>
-                            :
-                            <div style={{'borderRadius': '20px','minHeight':'140px' ,'display':'flex','justifyContent':'center', 'alignItems':'center'}} 
-                                className='bg-secondary'>
-                                No Image
-                            </div>
-                        }
-                        <p className='p-2 m-2'>{actor.character}</p>
-                    </div>
-
-                    ))}
+                <div >
+                    {/*show actors */}
+                    <Grid header={'Actors'}>
+                        { movie.actors &&
+                          movie.actors.map(actor =>(
+                            <Actor key={actor.credit_id}
+                                   name = {actor.name}
+                                   character = {actor.character}
+                                   imageURL = {actor.profile_path ? `http://image.tmdb.org/t/p/w92/${actor.profile_path}`
+                                   :
+                                   NoImage}
+                            />
+                        ))}
+                    </Grid>
                 </div>
         
                 
